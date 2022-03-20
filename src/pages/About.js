@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../store/user";
 
 function About() {
-  return <div>about</div>;
+  console.log(useContext(UserContext)); //undefined because you import without {}
+  return <div>dd</div>;
 }
 
 export default About;

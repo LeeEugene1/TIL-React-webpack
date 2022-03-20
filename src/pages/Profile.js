@@ -1,7 +1,10 @@
-import React from 'react';
-import { Card, Icon, Image } from 'semantic-ui-react';
+import React, { useContext } from "react";
+import { Card, Icon, Image } from "semantic-ui-react";
+import { UserContext } from "../store/user";
 
 const Profile = () => {
+  const userInfo = useContext(UserContext);
+  console.log(userInfo);
   return (
     <Card>
       <Card.Content>
@@ -12,17 +15,14 @@ const Profile = () => {
           bordered
           src="https://avatars3.githubusercontent.com/u/9492978?v=3"
         />
-        <Card.Header>Esau Silva</Card.Header>
-        <Card.Description>
-          Full Stack Software Engineer and avid Brazilian Jiu-Jitsu
-          practitioner.
-        </Card.Description>
+        <Card.Header>{userInfo.name}</Card.Header>
+        <Card.Description>{userInfo.job}</Card.Description>
       </Card.Content>
       <Card.Content extra>
         <a href="https://twitter.com/_esausilva" target="_blank">
           <Icon name="twitter" />
           Twitter
-        </a>{' '}
+        </a>{" "}
         <a href="https://github.com/esausilva" target="_blank">
           <Icon name="github" />
           GitHub
