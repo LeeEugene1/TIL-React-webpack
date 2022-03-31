@@ -1,8 +1,9 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Header, Container, Divider, Icon } from 'semantic-ui-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import { Header, Container, Divider, Icon } from "semantic-ui-react";
+import CustomHook from "./CustomHook";
 
-import { pullRight, h1 } from './layout.css';
+import { pullRight, h1 } from "./layout.css";
 
 const Layout = ({ children }) => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ children }) => {
         </Header>
       </Link>
       {children}
+      <CustomHook />
       <Divider />
       <p className={pullRight}>
         Made with <Icon name="heart" color="red" /> by Esau Silva

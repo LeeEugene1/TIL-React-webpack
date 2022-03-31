@@ -3,6 +3,7 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import importedComponent from "react-imported-component";
 import About from "./pages/About";
 import Home from "./components/Home";
+import Test from "./pages/Test";
 import Loading from "./components/Loading";
 import Profile from "./pages/Profile";
 import UserStore from "./store/user";
@@ -31,6 +32,9 @@ const App = () => {
           </Route>
           <Route path="/profile">
             <Profile />
+          </Route>
+          <Route path="/test">
+            <Test />
           </Route>
           <Route exact path="/dynamic" component={AsyncDynamicPAge} />
           <Route component={AsyncNoMatch} />
