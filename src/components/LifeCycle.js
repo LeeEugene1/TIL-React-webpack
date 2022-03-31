@@ -1,12 +1,17 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-//3.소멸
-const UnmountTest = () => {
-  return <div>Unmount Testing Component</div>;
-};
-
 function LifeCycle() {
+  //3.소멸
+  const UnmountTest = () => {
+    useEffect(() => {
+      console.log("Mount!");
+      return () => {
+        console.log("UnMount!!");
+      };
+    }, []);
+    return <div>Unmount Testing Component</div>;
+  };
   const [count, setCount] = useState(0);
   const [text, setText] = useState("");
 
@@ -16,20 +21,17 @@ function LifeCycle() {
   }, []);
 
   //2.업데이트(리랜더링)
-  useEffect(() => {
-    console.log("update!");
-  });
+  //   useEffect(() => {
+  //     console.log("update!");
+  //   });
 
-  useEffect(
-    () => {
-      console.log(`only count is update ${count}`);
-      if (count > 3) {
-        alert("count가 5를 넘어 1로초기화합니다.");
-        setCount(1);
-      }
-    },
-    { count }
-  );
+  useEffect(() => {
+    console.log(`only count is update ${count}`);
+    if (count > 3) {
+      alert("count가 5를 넘어 1로초기화합니다.");
+      setCount(1);
+    }
+  }, [count]);
   //   useEffect(() => {...}, { text });//text만 리랜더링될때 작동
 
   const [isVisible, setIsVisible] = useState(false);
