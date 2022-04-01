@@ -58,3 +58,15 @@ function LifeCycle() {
 }
 
 export default LifeCycle;
+
+//quiz 이것의 결과는?
+//   const [count, setCount] = useState(0);
+
+//   useEffect(() => {
+//     const id = setInterval(() => {
+//       setCount(count + 1);
+//     }, 1000);
+//     return () => clearInterval(id);
+//   }, [count]);
+
+//   return <h1>{count}</h1>;
